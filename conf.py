@@ -30,11 +30,11 @@ source_encoding = "utf-8-sig"
 master_doc = "index"
 
 # General information about the project
-project = "Godot Engine"
+project = "AfonsoJr."
 copyright = (
-    "2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+    "2020, AfonsoJr"
 )
-author = "Juan Linietsky, Ariel Manzur and the Godot community"
+author = "AfonsoJr."
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
@@ -52,29 +52,17 @@ if env_tags is not None:
 # Language / i18n
 
 supported_languages = {
-    "en": "Godot Engine (%s) documentation in English",
-    "de": "Godot Engine (%s) Dokumentation auf Deutsch",
-    "es": "Documentación de Godot Engine (%s) en español",
-    "fr": "Documentation de Godot Engine (%s) en français",
-    "fi": "Godot Engine (%s) dokumentaatio suomeksi",
-    "it": "Godot Engine (%s) documentazione in italiano",
-    "ja": "Godot Engine (%s)の日本語のドキュメント",
-    "ko": "Godot Engine (%s) 문서 (한국어)",
-    "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
-    "pt_BR": "Documentação da Godot Engine (%s) em Português Brasileiro",
-    "ru": "Документация Godot Engine (%s) на русском языке",
-    "uk": "Документація до Godot Engine (%s) українською мовою",
-    "zh_CN": "Godot Engine (%s) 简体中文文档",
+    "pt_BR": "Minha Documentação (%s) em Português Brasileiro",
 }
 
-language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+language = os.getenv("READTHEDOCS_LANGUAGE", "pt_BR")
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
     print("Supported languages: " + ", ".join(supported_languages.keys()))
     print(
         "The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'."
     )
-    language = "en"
+    language = "pt_BR"
 
 is_i18n = tags.has("i18n")  # noqa: F821
 
@@ -117,7 +105,7 @@ html_title = supported_languages[language] % version
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
     "display_github": not is_i18n,  # Integrate GitHub
-    "github_user": "godotengine",  # Username
+    "github_user": "AfonsoJr",  # Username
     "github_repo": "godot-docs",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
@@ -125,11 +113,11 @@ html_context = {
     "godot_docs_supported_languages": list(supported_languages.keys()),
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
-    "godot_default_lang": "en",
+    "godot_default_lang": "pt_BR",
     "godot_canonical_version": "stable",
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
-    "godot_title_prefix": "" if on_rtd else "(DEV) ",
+    "godot_title_prefix": "" if on_rtd else "[DEV] ",
 }
 
 html_logo = "img/docs_logo.png"
@@ -195,6 +183,6 @@ rst_epilog = """
     :width: 287
     :height: 66
 """.format(
-    image_locale="-" if language == "en" else language,
-    target_locale="" if language == "en" else "/" + language,
+    image_locale="-" if language == "pt_BR" else language,
+    target_locale="" if language == "pt_BR" else "/" + language,
 )
