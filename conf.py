@@ -79,7 +79,7 @@ lexers["gdscript"] = GDScriptLexer()
 # fmt: on
 
 # Pygments (syntax highlighting) style to use
-pygments_style = "sphinx"
+pygments_style = "sphinx" # sphinx
 highlight_language = "gdscript"
 
 # -- Options for HTML output ----------------------------------------------
